@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <title>Login Form</title>
+</head>
+<body>
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    STATIONERY
+                  <br>  <small>Let us create your account</small>
+                </h2>
+            </div>
+            <form class="card-form" action="/signup" method="POST">
+                <div class="input">
+                    <input type="text" class="input-field" value="username" name="username" required/>
+                    <label class="input-label">Name</label>
+                </div>
+                <div class="input">
+                    <input type="text" class="input-field" value="email" name="email" required/>
+                    <label class="input-label">Email</label>
+                </div>
+                <div class="input">
+                    <input type="text" class="input-field" value="phone" name="phone" required/>
+                    <label class="input-label">Phone Number</label>
+                </div>
+                <div class="input">
+                    <input type="password" class="input-field" name="password" required/>
+                    <label class="input-label">Password</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Sign Up</button>
+                </div>
+            </form>
+            
+            <div class="card-info">
+                <p> Have an account? <a href="/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
