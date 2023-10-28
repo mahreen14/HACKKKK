@@ -2,24 +2,34 @@ BODY{
   background: url('https://static.vecteezy.com/system/resources/previews/025/470/607/original/school-seamless-pattern-with-cartoon-study-supplies-stationary-graphic-for-wrapping-paper-scrapbooking-stationery-wallpaper-kids-textile-back-to-school-theme-isolated-on-white-background-vector.jpg');
 }
 .navbar {
-    display: flex;
-    align-items: center;
-    background-color:red;
-    padding: none;
+    height: 70px;
 }
 .logo{
-    color: white;
-    font-size: 50px;
-    text-decoration: none;
-    margin: auto;
-    font-family:'Times New Roman', Times, serif;
+  color: #ff5f5f;
+  font-size: 50px;
+  text-decoration: none;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+  font-weight: 400;
+  margin-right: 35px;
 }
+
+.navbar-nav{
+  font-size: 22px;
+}
+
+
 .search{
     margin: 2px;
 
 }
 .video{
-    margin: 70px 0 0 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
   
   .sidenav {

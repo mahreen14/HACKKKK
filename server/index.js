@@ -3,7 +3,11 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 const port = 3000;
-var authorized=false
+const uuid = require('uuid')
+
+
+
+ authorized=false
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -19,7 +23,7 @@ if(authorized){
 
 // Sign-up endpoint
 app.post('/signup', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, email, phone } = req.body;
 
   // Load existing user data (if any)
   let userData = [];
@@ -36,8 +40,9 @@ app.post('/signup', (req, res) => {
   if (existingUser) {
     res.send('Username already exists');
   } else {
+    const u_id= uuid.v4()
     // Save the new user to the JSON file
-    userData.push({ username, password });
+    userData.push({u_id, username, password, email, phone });
     fs.writeFileSync('users.json', JSON.stringify(userData, null, 2));
     // res.send('Sign-up successful');
     res.redirect("/login")
@@ -78,6 +83,17 @@ app.post('/login', (req, res) => {
     res.send('Login failed');
   }
 });
+
+app.post('/addtocart', (req,res)=>{
+  let product = req.body.product
+  let uid=req.body.myuid
+  var users_arr = fs.readFileSync("users.json","utf-8")
+  var index = users_arr.find(e=>e.u_id==uid)
+  if(index==-1) return res.status(400).send("bad request")
+ users_arr[index].products.push(product)
+fs.writeFileSync("users.json",JSON.stringify(users_arr))
+return res.send({"message":"successfully added to cart"})
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

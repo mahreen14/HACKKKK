@@ -1,6 +1,17 @@
 [
   {
-    "username": "username",
-    "password": "user"
+    "u_id": "5012092a-d9ef-41b5-aa6d-c222b9d57cad",
+    "username": "test1",
+    "password": "1234",
+    "email": "test@gmail.com",
+    "phone": "13245",
+    "products": []
+  },
+  {
+    "u_id": "3ba08eba-5438-4b93-a3e5-f058ea010d2e",
+    "username": "rahmath",
+    "password": "1234",
+    "email": "rahmath@gmail.com",
+    "phone": "7730078806"
   }
 ]
